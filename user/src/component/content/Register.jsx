@@ -1,72 +1,148 @@
-import React, { useState } from "react";
-import VolunteerForm from "./VolunteerForm";
-import DonerForm from "./DonerForm";
-import headlogo1 from "../../assets/flower-pot.png";
+import React from "react";
 
 const Register = () => {
-  const [formType, setFormType] = useState("volunteer");
-
-  const handleButtonClick = (type) => {
-    setFormType(type);
-  };
-
   return (
-    <>
-      <div className="w-full mt-20 px-4 lg:px-16">
-        <div className="flex justify-center">
-          <h2 className="heading01 font-bold mb-8 md:text-3xl">
-            {" "}
-            Get Register Yourself{" "}
-          </h2>
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl">
+        <h1 className="text-2xl font-bold text-center mb-6">STUDENT REGISTRATION</h1>
 
-          <img src={headlogo1} className="h-14 inline" alt="" />
-        </div>
-        <div className="flex gap-4">
-          <div className="w-1/2">
+        <form className="space-y-4">
+          <div className="grid grid-cols-3 gap-4">
+            {/* Student's Name */}
+            <div className="col-span-3">
+              <label className="block font-medium">Student First Name *</label>
+              <input type="text" placeholder="Eg. Ved" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Middle Name</label>
+              <input type="text" placeholder="Eg. Prakash" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Last Name *</label>
+              <input type="text" placeholder="Eg. Mishra" className="w-full border rounded p-2" />
+            </div>
+          </div>
+
+          {/* Parent's Names */}
+          <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-3">
+              <label className="block font-medium">Father's First Name *</label>
+              <input type="text" placeholder="Eg. Prakash" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Middle Name</label>
+              <input type="text" placeholder="Eg. Prakash" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Last Name *</label>
+              <input type="text" placeholder="Eg. Mishra" className="w-full border rounded p-2" />
+            </div>
+          </div>
+
+          {/* Mother's Names */}
+          <div className="grid grid-cols-3 gap-4">
+            <div className="col-span-3">
+              <label className="block font-medium">Mother's First Name *</label>
+              <input type="text" placeholder="Eg. Laxmi" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Middle Name</label>
+              <input type="text" placeholder="-" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Last Name *</label>
+              <input type="text" placeholder="Eg. Mishra" className="w-full border rounded p-2" />
+            </div>
+          </div>
+
+          {/* Permanent Address */}
+          <div>
+            <label className="block font-medium">Permanent Address *</label>
+            <input
+              type="text"
+              placeholder="House no. 12, Shwetamber Gali..."
+              className="w-full border rounded p-2"
+            />
+          </div>
+
+          {/* Additional Details */}
+          <div className="grid grid-cols-3 gap-4">
+            <div>
+              <label className="block font-medium">Block</label>
+              <input type="text" placeholder="Dakshin Phulera" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Village</label>
+              <input type="text" placeholder="Phulera" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">District</label>
+              <input type="text" placeholder="Vidisha" className="w-full border rounded p-2" />
+            </div>
+          </div>
+
+          {/* DOB and Gender */}
+          <div className="grid grid-cols-3 gap-4">
+            <div>
+              <label className="block font-medium">Date of Birth *</label>
+              <input type="date" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Age on Date</label>
+              <input type="number" placeholder="16" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Gender *</label>
+              <select className="w-full border rounded p-2">
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Other Details */}
+          <div className="grid grid-cols-3 gap-4">
+            <div>
+              <label className="block font-medium">Religion</label>
+              <input type="text" placeholder="Hindu" className="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label className="block font-medium">Social Category</label>
+              <select className="w-full border rounded p-2">
+                <option>General</option>
+                <option>SC</option>
+                <option>ST</option>
+                <option>OBC</option>
+              </select>
+            </div>
+            <div>
+              <label className="block font-medium">Contact No *</label>
+              <input
+                type="text"
+                placeholder="9424456596"
+                className="w-full border rounded p-2"
+              />
+            </div>
+          </div>
+
+          {/* Submit Buttons */}
+          <div className="flex justify-center gap-4">
             <button
-              className={`w-full py-2 font-semibold ${
-                formType === "volunteer" ? "bg-primary" : "bg-green-700"
-              } text-white`}
-              onClick={() => handleButtonClick("volunteer")}
+              type="reset"
+              className="bg-red-500 text-white px-6 py-2 rounded-lg shadow hover:bg-red-600"
             >
-              As a Volunteer
+              CLEAR
+            </button>
+            <button
+              type="submit"
+              className="bg-green-500 text-white px-6 py-2 rounded-lg shadow hover:bg-green-600"
+            >
+              SUBMIT
             </button>
           </div>
-          <div className="w-1/2">
-            <button
-              className={`w-full py-2 font-semibold ${
-                formType === "donor" ? "bg-primary" : "bg-green-700"
-              } text-white`}
-              onClick={() => handleButtonClick("donor")}
-            >
-              As a Donor
-            </button>
-          </div>
-        </div>
-
-        <div className="mt-8">
-          {formType === "volunteer" && (
-            <div className="p-6 contactbg rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-green-800">
-                Volunteer Registration Form
-              </h3>
-              {/* Volunteer form fields */}
-              <VolunteerForm />
-            </div>
-          )}
-
-          {formType === "donor" && (
-            <div className="p-6 contactbg rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-green-800">
-                Donor Registration Form
-              </h3>
-              {/* Donor form fields */}
-              <DonerForm />
-            </div>
-          )}
-        </div>
+        </form>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import logo from '../../assets/logo.png'
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -41,7 +42,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 footer-section">
           {/* Logo and Description */}
           <div className="flex flex-col items-center md:items-start">
-            <div className="bg-red-500 w-16 h-16 rounded-full mb-4"></div>
+            <div className="bg-white w-16 h-16 rounded-full mb-4">
+              <img src={logo} alt="" />
+            </div>
             <h2 className="text-lg font-semibold">ABC State Open School</h2>
             <p className="text-sm text-gray-400">एबीसी स्टेट ओपन स्कूल</p>
             <p className="text-gray-400 text-sm mt-4">
